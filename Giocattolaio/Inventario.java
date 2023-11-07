@@ -1,4 +1,4 @@
-public class Inventario {
+public class Inventario{
     Giocattolo v[];
     max_size = 10;
 
