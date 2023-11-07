@@ -1,24 +1,24 @@
 public abstract RegistroVendite {
 
         double totaleVendite;
-        List <Giocattolo> registro = new ArrayList<>();
+        List <Vendita> registro = new ArrayList<>();
 
 
         RegistroVendite(double totaleVendite) { // costruttore
             this.totaleVendite = totaleVendite;
         }
 
-        public void aggiungiVendita(Giocattolo g) { // aggiunge una vendita al registro
-            totaleVendite += g.getPrezzo();
-            registro.add(g);
+        public void aggiungiVendita(Vendita v) { // aggiunge una vendita al registro
+            totaleVendite += v.getPrezzo();
+            registro.add(v);
         }
 
-        public void rimuoviVendita(Giocattolo g) { // rimuove una vendita dal registro
-            totaleVendite -= g.getPrezzo();
-            registro.remove(g);
+        public void rimuoviVendita(Vendita v) { // rimuove una vendita dal registro
+            totaleVendite -= v.getPrezzo();
+            registro.remove(v);
         }
 
-        public List<Giocattolo> getRegistro() { // restituisce il registro
+        public List<Vendita> getRegistro() { // restituisce il registro
             return registro;
         }
 
