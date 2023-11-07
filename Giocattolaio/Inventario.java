@@ -32,7 +32,7 @@ public class Inventario{
         }
     }
 
-    public void toString () { //stampo l'inventario
+    public void stampaInventario () { //stampo l'inventario
         System.out.println("----- INVENTARIO -----");
         for (int i = 0; i < v.length; i++) {
             System.out.println("NOME: ");
@@ -44,7 +44,7 @@ public class Inventario{
         }
     }
 
-    public void trovaGiocattolo (GIocattolo g) { //ricerco il giocattolo
+    public void infoGiocattolo (GIocattolo g) { //ricerco il giocattolo
         for (int i = 0; i < v.length; i++) {
             if (v[i] == g) {
                 System.out.println("----- RISULTATO RICERCA -----");
@@ -60,6 +60,19 @@ public class Inventario{
             else print("Nessun giocattolo trovato");
         }
     }
+
+    public boolean trovaGiocattolo (GIocattolo g) { //ricerco il giocattolo
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] == g) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
 
     public void ordinaPerPrezzo () { //ordino l'inventario per prezzo
         Giocattolo temp;
