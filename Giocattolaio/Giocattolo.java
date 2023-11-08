@@ -49,7 +49,8 @@ private class Giocattolo {
         this.quantita = quantita;
     }
 
-    setEtaconsigliata(int etaconsigliata) {
+    setEtaConsigliata(int etaconsigliata) {
         this.etaconsigliata = etaconsigliata;
     }
+
 }

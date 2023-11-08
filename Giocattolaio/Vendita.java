@@ -1,4 +1,4 @@
-public class Vendita extends Giocattolo  {
+public class Vendita extends Giocattolo {
     Cliente cliente; 
     int quantitaRichiesta;
 

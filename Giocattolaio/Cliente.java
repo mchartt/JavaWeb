@@ -1,17 +1,14 @@
 import java.util.Scanner;
 
 
-private class Cliente {
+private class Cliente extends Persona {
     String id;
-    String nome;
-    String cognome;
     String email;
     float credito;
 
     public Cliente(String id, String nome, String cognome, String email, float credito) {
+        super(nome, cognome);
         this.id = id;
-        this.nome = nome;
-        this.cognome = cognome;
         this.email = email;
         this.credito = credito;
     }
@@ -56,18 +53,46 @@ private class Cliente {
     void setCredito(float credito) {
         this.credito = credito;
     }
-    void compra (Giocattolo g, Inventario inv, RegistroVendite rv) { //aggiungere registro vendite
+
+    void menu() {
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("--- Menu ---");
+            System.out.println("1. Visualizza catalogo");
+            System.out.println("2. Acquista");
+            System.out.println("3. Esci");
+
+            switch (sc.nextInt()) {
+                case 1:
+                    visualizzaCatalogo();
+                    break;
+                case 2:
+                    compra();
+                    break;
+                case 3:
+                    System.out.println("Arrivederci");
+                    break;
+                default:
+                    System.out.println("Scelta non valida");
+                    break;
+            }
+        while(sc.nextInt() != 3);
+        sc.close();
+    }
+
+    void compra (String nomeGioco, String ID, Inventario inv, RegistroVendite rv) { //aggiungere registro vendite
         Scanner sc = new Scanner(System.in);
         Inventario inv = new Inventario();
 
-        if (inv.trovaGiocattolo(g)) { //trovaGiocattolo restituisce true se il giocattolo è disponibile
+        if (inv.trovaGiocattolo(nomeGioco, ID)!= -1) { //trovaGiocattolo restituisce true se il giocattolo è disponibile
             System.out.println("Giocattolo disponibile");
-            inv.infoGiocattolo(g);
+            index = inv.trovaGiocattolo(nomeGioco, ID);
+            inv.infoGiocattolo(nomeGioco, ID);
             System.out.println("Vuoi acquistare il giocattolo?");
             System.out.println("1. Si");
             System.out.println("2. No");
-            if (sc.nextInt() == 1 && credito >= g.getPrezzo()) {
-                confermaAcquisto(g, inv, rv); //effettua l'acquisto
+            if (sc.nextInt() == 1 && credito >= inv.v[i].getPrezzo()) {
+                confermaAcquisto(inv.v[index], inv, rv); //effettua l'acquisto
                 System.out.println("Giocattolo acquistato");
             }
 

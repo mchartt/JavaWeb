@@ -89,7 +89,7 @@ public abstract class RegistroVendite {
         }
 
 
-        public void accesso () {
+        public void accessoRegistroVendite () {
             Scanner input = new Scanner(System.in);
             System.out.println("----     Benvenuto       ----");
             System.out.println("----PANNELLO DI CONTROLLO----")
