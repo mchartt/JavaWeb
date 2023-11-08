@@ -1,18 +1,19 @@
 private class Giocattolo {
-    String ID;
+    String id_giocattolo;
     String nome;
     float prezzo;
+    int quantita
     int etaconsigliata;
 
     Giocattolo (String ID, String nome, float prezzo, int etaconsigliata) {
-        this.ID = ID;
+        this.id_giocattolo = ID;
         this.nome = nome;
         this.prezzo = prezzo;
         this.etaconsigliata = etaconsigliata;
     }
 
-    getID() {
-        return this.ID;
+    getIDGiocattolo() {
+        return this.id_giocattolo;
     }
 
     getNome() {
@@ -23,12 +24,17 @@ private class Giocattolo {
         return this.prezzo;
     }
 
+    getQuantita() {
+        return this.quantita;
+    }
+
     getEtaconsigliata() {
         return this.etaconsigliata;
     }
 
-    setID(String ID) {
-        this.ID = ID;
+
+    setIDGiocattolo(String ID) {
+        this.id_giocattolo = id_giocattolo;
     }
 
     setNome(String nome) {
@@ -37,6 +43,10 @@ private class Giocattolo {
 
     setPrezzo(float prezzo) {
         this.prezzo = prezzo;
+    }
+
+    setQuantita(int quantita) {
+        this.quantita = quantita;
     }
 
     setEtaconsigliata(int etaconsigliata) {

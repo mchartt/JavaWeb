@@ -1,15 +1,62 @@
 import java.util.Scanner;
 
 
-public class CLiente {
+private class Cliente {
     String id;
     String nome;
     String cognome;
     String email;
     float credito;
 
+    public Cliente(String id, String nome, String cognome, String email, float credito) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.email = email;
+        this.credito = credito;
+    }
 
-    void compra (Giocattolo g, Inventario inv) { //aggiungere registro vendite
+
+    String getID() {
+        return id;
+    }
+
+    void setId(String id) {
+        this.id = id;
+    }
+
+    String getNome() {
+        return nome;
+    }
+
+    void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    String getCognome() {
+        return cognome;
+    }
+
+    void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    String getEmail() {
+        return email;
+    }
+
+    void setEmail(String email) {
+        this.email = email;
+    }
+
+    float getCredito() {
+        return credito;
+    }
+
+    void setCredito(float credito) {
+        this.credito = credito;
+    }
+    void compra (Giocattolo g, Inventario inv, RegistroVendite rv) { //aggiungere registro vendite
         Scanner sc = new Scanner(System.in);
         Inventario inv = new Inventario();
 
@@ -20,7 +67,7 @@ public class CLiente {
             System.out.println("1. Si");
             System.out.println("2. No");
             if (sc.nextInt() == 1 && credito >= g.getPrezzo()) {
-                confermaAcquisto(g); //effettua l'acquisto
+                confermaAcquisto(g, inv, rv); //effettua l'acquisto
                 System.out.println("Giocattolo acquistato");
             }
 

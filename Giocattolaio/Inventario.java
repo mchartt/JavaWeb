@@ -105,7 +105,7 @@ public class Inventario{
         }
     }
 
-    public void modificaPrezzo(GIocattolo g, float prezzo) { //modifico il prezzo
+    public void modificaPrezzo(Giocattolo g, float prezzo) { //modifico il prezzo
         for (int i = 0; i < v.length; i++) {
             if (v[i] == g) {
                 v[i].prezzo = prezzo;
@@ -121,6 +121,85 @@ public class Inventario{
                 break;
             }
         }
+    }
+
+
+    public menu () {
+
+        Inventario inventario = new Inventario(10);
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("----- MENU -----");
+            System.out.println("1. Aggiungi giocattolo");
+            System.out.println("2. Elimina giocattolo");
+            System.out.println("3. Stampa inventario");
+            System.out.println("4. Info giocattolo");
+            System.out.println("5. Trova giocattolo");
+            System.out.println("6. Ordina per prezzo");
+            System.out.println("7. Modifica quantita");
+            System.out.println("8. Modifica nome");
+            System.out.println("9. Modifica prezzo");
+            System.out.println("10. Modifica ID");
+            System.out.println("0. Exit");
+            System.out.println("Enter your choice:");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Inserisci il nome del giocattolo:");
+                    String nome = scanner.next();
+                    System.out.println("Inserisci il prezzo del giocattolo:");
+                    float prezzo = scanner.nextFloat();
+                    System.out.println("Inserisci la quantita del giocattolo:");
+                    int quantita = scanner.nextInt();
+                    System.out.println("Inserisci l'id del giocattolo:");
+                    String id = scanner.next();
+                    System.out.println("Inserisci eta consigliata");
+                    int etaconsigliata = scanner.nextInt();
+                    
+                    Giocattolo g = new Giocattolo(nome, prezzo, quantita, id, etaconsigliata);  // Creo un nuovo giocattolo
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    inventario.stampaInventario();
+                    break;
+                case 4:
+                    // Call infoGiocattolo method
+                    break;
+                case 5:
+                    // Call trovaGiocattolo method
+                    break;
+                case 6:
+                    inventario.ordinaPerPrezzo();
+                    break;
+                case 7:
+                    // Call modificaQuantita method
+                    break;
+                case 8:
+                    // Call modificaNome method
+                    break;
+                case 9:
+                    // Call modificaPrezzo method
+                    break;
+                case 10:
+                    // Call modificaID method
+                    break;
+                case 0:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 0 and 10.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
+    }
+
     }
 
 }
