@@ -5,11 +5,12 @@ private class Giocattolo {
     int quantita
     int etaconsigliata;
 
-    Giocattolo (String ID, String nome, float prezzo, int etaconsigliata) {
+    Giocattolo(String ID, String nome, float prezzo, int etaconsigliata, int quantita) {
         this.id_giocattolo = ID;
         this.nome = nome;
         this.prezzo = prezzo;
         this.etaconsigliata = etaconsigliata;
+        this.quantita = quantita;
     }
 
     getIDGiocattolo() {
@@ -34,8 +35,9 @@ private class Giocattolo {
 
 
     setIDGiocattolo(String ID) {
-        this.id_giocattolo = id_giocattolo;
+        this.id_giocattolo = ID;
     }
+
 
     setNome(String nome) {
         this.nome = nome;
