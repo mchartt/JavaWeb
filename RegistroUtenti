@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class RegistroUtenti {
+    private List<Utente> utenti;
+
+    public RegistroUtenti() {
+        utenti = new ArrayList<>();
+    }
+
+    public void AggiungiUtente(Utente utente) {
+        utenti.add(utente);
+    }
+
+    public void Elimina(int index) {
+        utenti.remove(index);
+    }
+
+    public visualizzaRegistroUtente() {
+        for (Utente utente : utenti) {
+            System.out.println(utente.toString());
+        }
+    }
+}
