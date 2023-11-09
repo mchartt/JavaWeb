@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Inventario{
     Giocattolo v[];
-    max_size = 10;
+    int max_size = 10;
     int count = 0;
 
     public Inventario(int spazio) {
@@ -126,7 +126,7 @@ public class Inventario{
 
     public void ordinaPerPrezzo () { //ordino l'inventario per prezzo
         Giocattolo temp;
-        for (int i = 0; i < v.length; i++) {
+        for (int i = 0; i < v.length; i++) {  //BUBBLE SORT
             for (int j = 0; j < v.length - 1; j++) {
                 if (v[j].prezzo > v[j+1].prezzo) {
                     temp = v[j];
