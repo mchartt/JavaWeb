@@ -25,11 +25,16 @@ public abstract class RegistroVendite {
             -vendita
         ---------------------------------*/
 
+
+
+        //RIMUOVI VENDITA DA OGGETTO VENDITA
         public void rimuoviVendita(Vendita v) { // rimuove una vendita dal registro
             totaleVendite -= v.getPrezzo();
             registro.remove(v);
         }
 
+
+        //RIMUOVI VENDITA DA NOME 
         public void rimuoviVendita(String nome) { // rimuove una vendita dal registro da nome
             totaleVendite -= v.getPrezzo();
 
@@ -41,6 +46,8 @@ public abstract class RegistroVendite {
             }
         }
 
+
+        //RIMUOVI VENDITA DA ID
         public void rimuoviVendita(String ID) { // rimuove una vendita dal registro da id
             totaleVendite -= v.getPrezzo();
 
