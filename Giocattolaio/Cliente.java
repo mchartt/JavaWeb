@@ -76,7 +76,7 @@ private class Cliente extends Persona {
                     System.out.println("Scelta non valida");
                     break;
             }
-        while(sc.nextInt() != 3);
+        } while(sc.nextInt() != 3);
         sc.close();
     }
 
@@ -107,7 +107,7 @@ private class Cliente extends Persona {
 
     void confermaAcquisto (Giocattolo g, Inventario inv, RegistroVendite rv) { //aggiungere registro vendite
         g.setQuantita(g.getQuantita() - 1);
-        if g.getQuantita() == 0 {
+        if (g.getQuantita() == 0) {
             inv.eliminaGiocattolo(g);
             credito -= g.getPrezzo();
             rv.aggiungiVendita(g);
